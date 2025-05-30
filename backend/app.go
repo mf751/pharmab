@@ -13,7 +13,8 @@ import (
 // App struct
 type App struct {
 	ctx       context.Context
-	DataModel data.DataModel
+	DataModel *data.DataModel
+	UserModel *data.UserModel
 }
 
 // NewApp creates a new App application struct
@@ -36,7 +37,10 @@ func (a *App) Startup(ctx context.Context) {
 		panic(err)
 	}
 	fmt.Println("Connected to sql")
-	a.DataModel = data.DataModel{
+	a.DataModel = &data.DataModel{
+		DB: conn,
+	}
+	a.UserModel = &data.UserModel{
 		DB: conn,
 	}
 
@@ -45,14 +49,4 @@ func (a *App) Startup(ctx context.Context) {
 		log.Fatalln("migrations failed")
 		panic(err)
 	}
-}
-
-func (a *App) AddTest(text string) bool {
-	err := a.DataModel.AddTest(text)
-	return err == nil
-}
-
-func (a *App) GetTests() []string {
-	tests, _ := a.DataModel.GetTests()
-	return tests
 }

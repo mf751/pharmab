@@ -1,6 +1,17 @@
 :root {
   --main-bg: rgb(229, 229, 229);
   --main-color: rgb(0, 0, 0);
+  --main-blue: #5065f6;
+  --main-red: #f04b69;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
 html {
@@ -10,4 +21,11 @@ html {
 
 body {
   margin: 0;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
 }

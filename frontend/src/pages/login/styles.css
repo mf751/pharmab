@@ -1,0 +1,122 @@
+#App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login {
+  width: 632px;
+  height: 678px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 125px; */
+}
+
+.login .icon {
+  height: 56px;
+  width: 56px;
+  background-color: #ffdb45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.login .icon .icon-in {
+  width: 37px;
+  height: 37px;
+}
+
+.bxs {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+.login .welcome-msg h1 {
+  text-align: center;
+  font-weight: 200;
+  font-size: 36px;
+  margin-bottom: 0;
+  user-select: none;
+}
+
+.login .welcome-msg p {
+  user-select: none;
+  margin-top: 0;
+  color: #757b82;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login .inputs {
+  margin: 50px 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.login .inputs input {
+  border-radius: 10px;
+  border: 1px solid #c8cacd;
+  width: 336px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px;
+  color: black;
+}
+
+.login .inputs input:focus {
+  outline: 1px solid var(--main-blue);
+}
+
+.login form .error {
+  text-align: center;
+  font-weight: 600;
+  color: var(--main-red);
+  margin-bottom: 25px;
+}
+
+.login form button {
+  height: 50px;
+  border: none;
+  background-color: var(--main-blue);
+  border-radius: 10px;
+  padding: 0 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: inset 0 -2px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.login form button:focus {
+  outline: none;
+}
+
+.login form button .arrow-icon {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login form button .arrow-icon .arrow-icon-in {
+  width: 19px;
+  height: 19px;
+}

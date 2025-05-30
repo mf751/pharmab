@@ -63,7 +63,7 @@ WHERE users.email = ?
 	return &user, nil
 }
 
-func (m UserModel) Insert(user *User) (int, error) {
+func (m UserModel) Insert(user *User) error {
 	sqlQuery := `
 INSERT INTO users(name, email, is_admin, hashed_password)
 VALUES (
@@ -73,7 +73,7 @@ VALUES (
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
 
-	result, err := m.DB.ExecContext(
+	_, err := m.DB.ExecContext(
 		ctx,
 		sqlQuery,
 		user.Name,
@@ -82,10 +82,8 @@ VALUES (
 		user.HashedPassword,
 	)
 	if err != nil {
-		return 0, err
+		return err
 	}
-	id, _ := result.LastInsertId()
-	user.ID = int(id)
 
-	return user.ID, nil
+	return nil
 }
