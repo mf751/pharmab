@@ -30,7 +30,7 @@ func (app *App) CreateUser(name, email, password string, isAdmin bool) bool {
 	if err != nil {
 		return false
 	}
-	user.HashedPassword = hash
+	user.HashedPassword = string(hash)
 
 	err = app.UserModel.Insert(user)
 	if err != nil {

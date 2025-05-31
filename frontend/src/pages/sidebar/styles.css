@@ -9,6 +9,11 @@ nav {
   position: relative;
 }
 
+nav * {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 nav .header {
   padding: 5px 5px 0;
   display: flex;

@@ -21,7 +21,7 @@ type User struct {
 	Email          string `json:"email"`
 	IsAdmin        bool   `json:"is_admin"`
 	CreatedAt      string `json:"created_at"`
-	HashedPassword []byte `json:"-"`
+	HashedPassword string `json:"-"`
 }
 
 func (m UserModel) Login(email, password string) (*User, error) {
@@ -50,7 +50,7 @@ WHERE users.email = ?
 		}
 	}
 
-	err = bcrypt.CompareHashAndPassword(user.HashedPassword, []byte(password))
+	err = bcrypt.CompareHashAndPassword([]byte(user.HashedPassword), []byte(password))
 	if err != nil {
 		switch {
 		case errors.Is(err, bcrypt.ErrMismatchedHashAndPassword):
