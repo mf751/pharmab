@@ -3,17 +3,28 @@ import "./styles.css";
 import { HiUser } from "react-icons/hi2";
 import { GoArrowRight } from "react-icons/go";
 import { Login } from "/wailsjs/go/backend/App";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setUser } from "../../store/slices/user";
 
-export default function Home() {
+export default function LoginPage() {
   const [inputs, setInputs] = useState({});
   const [error, setError] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function submit(e) {
     e.preventDefault();
     const data = new FormData(e.target);
     const email = data.get("email");
     const password = data.get("password");
-    Login(email, password).then((res) => setError(res));
+    Login(email, password).then((res) => {
+      if (res.error !== "") setError(res.error);
+      else {
+        dispatch(setUser(res.user));
+        navigate("/dashboard");
+      }
+    });
   }
 
   return (

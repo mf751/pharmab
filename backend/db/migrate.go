@@ -30,6 +30,5 @@ func RunMigrations(db *sql.DB) error {
 	driver, _ := sqlite.WithInstance(db, &sqlite.Config{})
 	d, _ := iofs.New(embeddedMigrations, "migrations")
 	m, _ := migrate.NewWithInstance("iofs", d, "sqlite", driver)
-	_ = m.Up()
-	return nil
+	return m.Up()
 }

@@ -7,13 +7,17 @@ import (
 	"pharmaB/internal/data"
 )
 
-func (app *App) Login(email, password string) (*data.User, string) {
+type LoginResponse struct {
+	User  data.User `json:"user"`
+	Error string    `json:"error"`
+}
+
+func (app *App) Login(email, password string) LoginResponse {
 	user, err := app.UserModel.Login(email, password)
 	if err != nil {
-		runtime.LogPrint(app.ctx, err.Error())
-		return nil, err.Error()
+		return LoginResponse{Error: err.Error()}
 	}
-	return user, ""
+	return LoginResponse{User: *user}
 }
 
 func (app *App) CreateUser(name, email, password string, isAdmin bool) bool {
@@ -29,6 +33,9 @@ func (app *App) CreateUser(name, email, password string, isAdmin bool) bool {
 	user.HashedPassword = hash
 
 	err = app.UserModel.Insert(user)
+	if err != nil {
+		runtime.LogPrint(app.ctx, err.Error())
+	}
 
 	return err == nil
 }

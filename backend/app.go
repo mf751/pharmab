@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/wailsapp/wails/v2/pkg/runtime"
+
 	"pharmaB/backend/db"
 	"pharmaB/internal/data"
 )
@@ -46,7 +48,13 @@ func (a *App) Startup(ctx context.Context) {
 
 	err = db.RunMigrations(conn)
 	if err != nil {
-		log.Fatalln("migrations failed")
-		panic(err)
+		switch {
+		case err.Error() == "no change":
+			return
+		default:
+			runtime.LogPrintf(a.ctx, "%v", err.Error())
+			log.Fatalln("migrations failed")
+			panic(err)
+		}
 	}
 }

@@ -65,9 +65,9 @@ WHERE users.email = ?
 
 func (m UserModel) Insert(user *User) error {
 	sqlQuery := `
-INSERT INTO users(name, email, is_admin, hashed_password)
+INSERT INTO users(name, email, is_admin, password_hash)
 VALUES (
-	?, ?, ?, ?, ?
+	?, ?, ?, ? 
 	)
 	`
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
