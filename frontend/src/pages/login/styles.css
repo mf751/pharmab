@@ -1,9 +1,6 @@
-#App {
-  display: flex;
+#App:has(.login) {
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
 }
 
 .login {
@@ -69,7 +66,7 @@
 
 .login .welcome-msg p {
   margin-top: 0;
-  color: #757b82;
+  color: var(--main-grey);
   font-size: 18px;
   font-weight: 500;
 }
@@ -98,7 +95,7 @@
 }
 
 .login .inputs input::placeholder {
-  color: #757b82;
+  color: var(--main-grey);
   user-select: none;
   -webkit-user-select: none;
 }
@@ -166,7 +163,7 @@
   border: 1px solid #c8cacd;
   font-weight: 500;
   font-size: 18px;
-  color: #757b82;
+  color: var(--main-grey);
 }
 .login .inputs .isAdmin span:last-child {
   flex-basis: 60%;

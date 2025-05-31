@@ -4,6 +4,7 @@
   --main-blue: #5065f6;
   --main-red: #f04b69;
   --main-green: #28b95e;
+  --main-grey: #757b82;
 }
 
 body {
@@ -29,4 +30,10 @@ body {
   src: url("/assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 800;
   font-style: normal;
+}
+
+#App {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
 }
