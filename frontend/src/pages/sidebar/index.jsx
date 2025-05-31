@@ -8,12 +8,12 @@ import { FaHistory } from "react-icons/fa";
 import { ImStatsBars } from "react-icons/im";
 import { Link, useLocation } from "react-router-dom";
 import { HiUser } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
 import { MdAdminPanelSettings } from "react-icons/md";
-import { setUser } from "../../store/slices/user";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { FaUsersCog } from "react-icons/fa";
 import { TfiStatsUp } from "react-icons/tfi";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "../../store/slices/user";
 
 export default function SideBar() {
   const user = useSelector((state) => state.user.user);
@@ -38,7 +38,7 @@ export default function SideBar() {
   }
 
   return (
-    <nav>
+    <nav className="bxs">
       <div className="header">
         <div className="icon">
           <HiUser className="icon-in" />

@@ -24,14 +24,14 @@ export default function Create() {
 
   return (
     <div className="login bxs">
-      <div className="back-container" onClick={() => navigate("/dashboard")}>
+      <div className="back-container" onClick={() => navigate("/manageusers")}>
         <IoMdArrowRoundBack className="back" />
       </div>
       <div className="icon">
         <HiUser className="icon-in" />
       </div>
       <div className="welcome-msg">
-        <h1>Create User</h1>
+        <h1>Add User</h1>
         <p>Insert all the user information</p>
       </div>
       <form onSubmit={submit}>
@@ -69,7 +69,7 @@ export default function Create() {
           />
           <div
             onClick={() =>
-              setInputs((prev) => ({ ...inputs, isAdmin: !inputs.isAdmin }))
+              setInputs((prev) => ({ ...prev, isAdmin: !prev.isAdmin }))
             }
             className="isAdmin"
           >

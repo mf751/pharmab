@@ -87,3 +87,40 @@ VALUES (
 
 	return nil
 }
+
+func (m UserModel) GetUsers() (*[]User, error) {
+	sqlQuery := `
+SELECT id, name, email, is_admin, created_at FROM users
+	`
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+
+	rows, err := m.DB.QueryContext(ctx, sqlQuery)
+	if err != nil {
+		return nil, err
+	}
+
+	var users []User
+
+	for rows.Next() {
+		var user User
+		err = rows.Scan(
+			&user.ID,
+			&user.Name,
+			&user.Email,
+			&user.IsAdmin,
+			&user.CreatedAt,
+		)
+		if err != nil {
+			return nil, err
+		}
+
+		users = append(users, user)
+	}
+
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return &users, nil
+}

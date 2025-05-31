@@ -12,6 +12,11 @@ type LoginResponse struct {
 	Error string    `json:"error"`
 }
 
+type GetUsersResponse struct {
+	Users []data.User `json:"users"`
+	Error string      `json:"error"`
+}
+
 func (app *App) Login(email, password string) LoginResponse {
 	user, err := app.UserModel.Login(email, password)
 	if err != nil {
@@ -38,4 +43,12 @@ func (app *App) CreateUser(name, email, password string, isAdmin bool) bool {
 	}
 
 	return err == nil
+}
+
+func (app *App) GetUsers() GetUsersResponse {
+	users, err := app.UserModel.GetUsers()
+	if err != nil {
+		return GetUsersResponse{Error: err.Error()}
+	}
+	return GetUsersResponse{Users: *users}
 }

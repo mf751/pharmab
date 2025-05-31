@@ -6,6 +6,10 @@ export function CreateUser(arg1, arg2, arg3, arg4) {
   return window['go']['backend']['App']['CreateUser'](arg1, arg2, arg3, arg4);
 }
 
+export function GetUsers() {
+  return window['go']['backend']['App']['GetUsers']();
+}
+
 export function Login(arg1, arg2) {
   return window['go']['backend']['App']['Login'](arg1, arg2);
 }

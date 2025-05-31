@@ -4,4 +4,6 @@ import {backend} from '../models';
 
 export function CreateUser(arg1:string,arg2:string,arg3:string,arg4:boolean):Promise<boolean>;
 
+export function GetUsers():Promise<backend.GetUsersResponse>;
+
 export function Login(arg1:string,arg2:string):Promise<backend.LoginResponse>;
