@@ -9,13 +9,15 @@ import Orders from "./pages/orders";
 import Expiries from "./pages/expiries";
 import History from "./pages/history";
 import MyStats from "./pages/mystats";
+import ManageUsers from "./pages/manageUsers";
+import AllStats from "./pages/allStats";
 
 function App() {
   return (
     <div id="App">
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/user/create" element={<Create />} />
+        <Route path="/users/create" element={<Create />} />
         <Route
           path="/dashboard"
           element={
@@ -76,6 +78,24 @@ function App() {
             <>
               <SideBar />
               <MyStats />
+            </>
+          }
+        />
+        <Route
+          path="/manageusers"
+          element={
+            <>
+              <SideBar />
+              <ManageUsers />
+            </>
+          }
+        />
+        <Route
+          path="/allstatistics"
+          element={
+            <>
+              <SideBar />
+              <AllStats />
             </>
           }
         />

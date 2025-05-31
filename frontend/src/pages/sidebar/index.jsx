@@ -12,13 +12,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { setUser } from "../../store/slices/user";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { FaUsersCog } from "react-icons/fa";
+import { TfiStatsUp } from "react-icons/tfi";
 
 export default function SideBar() {
   const user = useSelector((state) => state.user.user);
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const list = [
+  let list = [
     { name: "Dashboard", icon: <VscDashboard className="icon" /> },
     { name: "Purchase", icon: <HiOutlineShoppingCart className="icon" /> },
     { name: "Products", icon: <GoPackage className="icon" /> },
@@ -27,6 +29,13 @@ export default function SideBar() {
     { name: "History", icon: <FaHistory className="icon" /> },
     { name: "My Statistics", icon: <ImStatsBars className="icon" /> },
   ];
+
+  if (user.is_admin) {
+    list = list.concat([
+      { name: "Manage Users", icon: <FaUsersCog /> },
+      { name: "All Statistics", icon: <TfiStatsUp /> },
+    ]);
+  }
 
   return (
     <nav>
