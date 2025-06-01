@@ -2,9 +2,11 @@
   --main-bg: rgb(229, 229, 229);
   --main-color: rgb(0, 0, 0);
   --main-blue: #5065f6;
+  --second-blue: #a7b1f9;
   --main-red: #f04b69;
   --main-green: #28b95e;
   --main-grey: #757b82;
+  --button-fill: #edeffe;
 }
 
 body {

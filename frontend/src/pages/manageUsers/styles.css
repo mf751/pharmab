@@ -41,4 +41,81 @@
   background-color: white;
   width: 100%;
   overflow-y: scroll;
+  display: inline-block;
+  position: relative;
+}
+
+.manage-users table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.manage-users table th,
+.manage-users table td {
+  border-bottom: 1px solid var(--main-bg);
+  vertical-align: middle;
+  text-align: left;
+  padding: 16px 20px;
+}
+
+.manage-users table th {
+  color: var(--main-grey);
+  width: 500px;
+}
+.manage-users table th:first-child {
+  width: 100px;
+}
+
+.manage-users table td {
+  color: #000;
+  font-weight: 500;
+}
+
+.manage-users table button {
+  color: var(--main-blue);
+  background-color: var(--button-fill);
+  border: 2px solid var(--second-blue);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.manage-users table .admin {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background-color: var(--main-red);
+  color: white;
+  font-weight: 500;
+}
+
+.manage-users .edit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 650px;
+  height: 650px;
+  background-color: white;
+  z-index: 8;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.manage-users .edit-overlay {
+  transition: 0.2s;
+  height: 100%;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #000;
+  /* opacity: 0; */
+  z-index: -1;
+  position: absolute;
+  content: "";
+}
+
+.manage-users .edit .close-icon {
+  width: 35px;
+  height: 35px;
 }

@@ -22,6 +22,7 @@ type User struct {
 	IsAdmin        bool   `json:"is_admin"`
 	CreatedAt      string `json:"created_at"`
 	HashedPassword string `json:"-"`
+	PhoneNumber    string `json:"phone_number"`
 }
 
 func (m UserModel) Login(email, password string) (*User, error) {
@@ -65,9 +66,9 @@ WHERE users.email = ?
 
 func (m UserModel) Insert(user *User) error {
 	sqlQuery := `
-INSERT INTO users(name, email, is_admin, password_hash)
+INSERT INTO users(name, email, is_admin, password_hash, phone_number)
 VALUES (
-	?, ?, ?, ? 
+	?, ?, ?, ?, ?
 	)
 	`
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
@@ -80,6 +81,7 @@ VALUES (
 		user.Email,
 		user.IsAdmin,
 		user.HashedPassword,
+		user.PhoneNumber,
 	)
 	if err != nil {
 		return err
@@ -90,7 +92,7 @@ VALUES (
 
 func (m UserModel) GetUsers() (*[]User, error) {
 	sqlQuery := `
-SELECT id, name, email, is_admin, created_at FROM users
+SELECT id, name, email, is_admin, created_at, phone_number FROM users
 	`
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
@@ -110,6 +112,7 @@ SELECT id, name, email, is_admin, created_at FROM users
 			&user.Email,
 			&user.IsAdmin,
 			&user.CreatedAt,
+			&user.PhoneNumber,
 		)
 		if err != nil {
 			return nil, err

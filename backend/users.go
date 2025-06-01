@@ -25,11 +25,12 @@ func (app *App) Login(email, password string) LoginResponse {
 	return LoginResponse{User: *user}
 }
 
-func (app *App) CreateUser(name, email, password string, isAdmin bool) bool {
+func (app *App) CreateUser(name, email, password, phoneNumber string, isAdmin bool) bool {
 	user := &data.User{
-		Name:    name,
-		Email:   email,
-		IsAdmin: isAdmin,
+		Name:        name,
+		Email:       email,
+		IsAdmin:     isAdmin,
+		PhoneNumber: phoneNumber,
 	}
 	hash, err := bcrypt.GenerateFromPassword([]byte(password), 12)
 	if err != nil {

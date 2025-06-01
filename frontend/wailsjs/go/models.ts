@@ -75,6 +75,7 @@ export namespace data {
 	    email: string;
 	    is_admin: boolean;
 	    created_at: string;
+	    phone_number: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new User(source);
@@ -87,6 +88,7 @@ export namespace data {
 	        this.email = source["email"];
 	        this.is_admin = source["is_admin"];
 	        this.created_at = source["created_at"];
+	        this.phone_number = source["phone_number"];
 	    }
 	}
 

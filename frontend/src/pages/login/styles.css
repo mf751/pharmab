@@ -79,6 +79,10 @@
   gap: 25px;
 }
 
+.login .inputs.create {
+  margin: 25px 0;
+}
+
 .login .inputs input {
   border-radius: 10px;
   border: 1px solid #c8cacd;

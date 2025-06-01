@@ -16,7 +16,8 @@ export default function Create() {
     const name = data.get("name");
     const email = data.get("email");
     const password = data.get("password");
-    let r = CreateUser(name, email, password, inputs.isAdmin);
+    const phoenNumber = data.get("phone_number");
+    let r = CreateUser(name, email, password, phoenNumber, inputs.isAdmin);
     r.then((res) => {
       if (res) setResult("Created!");
     });
@@ -35,7 +36,7 @@ export default function Create() {
         <p>Insert all the user information</p>
       </div>
       <form onSubmit={submit}>
-        <div className="inputs">
+        <div className="inputs create">
           <input
             type="text"
             required
@@ -55,6 +56,16 @@ export default function Create() {
             value={inputs.email}
             onChange={(e) =>
               setInputs((prev) => ({ ...prev, email: e.target.value }))
+            }
+          />
+          <input
+            type="text"
+            required
+            placeholder="Phone Number"
+            name="phone_number"
+            value={inputs.phoneNumber}
+            onChange={(e) =>
+              setInputs((prev) => ({ ...prev, phoneNumber: e.target.value }))
             }
           />
           <input
