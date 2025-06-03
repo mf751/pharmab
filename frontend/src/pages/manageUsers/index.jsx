@@ -142,7 +142,7 @@ export default function ManageUsers() {
         )}
         <div
           className="edit-overlay"
-          style={{ zIndex: isEdit ? 5 : -1, opacity: isEdit ? "0.3" : "0" }}
+          style={{ zIndex: isEdit ? 5 : -1, opacity: isEdit ? "0.4" : "0" }}
         ></div>
         <thead>
           <tr>

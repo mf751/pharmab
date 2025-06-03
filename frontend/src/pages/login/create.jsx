@@ -24,7 +24,7 @@ export default function Create() {
   }
 
   return (
-    <div className="login bxs">
+    <div className="login signup bxs">
       <div className="back-container" onClick={() => navigate("/manageusers")}>
         <IoMdArrowRoundBack className="back" />
       </div>

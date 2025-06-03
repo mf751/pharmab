@@ -1,0 +1,83 @@
+.dashboard {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+}
+
+.dashboard .head-stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.dashboard .head-stats .child {
+  background-color: white;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc((100% - 80px) / 4 - 10px);
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard .head-stats .child .content {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard .head-stats .child .details {
+  font-weight: 500;
+  color: var(--main-green);
+  cursor: pointer;
+}
+
+.dashboard .head-stats .child .content .logo {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  background-color: var(--main-blue);
+  border-radius: 50%;
+  border: 8px solid var(--third-blue);
+}
+
+.dashboard .head-stats .child.sales .logo {
+  background-color: var(--main-green);
+  border-color: var(--third-green);
+}
+
+.dashboard .head-stats .child.profit .logo {
+  background-color: var(--main-yellow);
+  border-color: var(--third-yellow);
+}
+.dashboard .head-stats .child.orders .logo {
+  background-color: var(--main-red);
+  border-color: var(--third-red);
+}
+
+.dashboard .head-stats .child .content .logo .icon {
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.dashboard .head-stats .child .content .text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard .head-stats .child .content .text .head {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.dashboard .head-stats .child .content .text .number {
+  font-size: 2rem;
+  font-weight: 200;
+}

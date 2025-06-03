@@ -42,7 +42,6 @@
   width: 100%;
   overflow-y: scroll;
   display: inline-block;
-  position: relative;
 }
 
 .manage-users table {
@@ -76,7 +75,7 @@
   user-select: none;
   -webkit-user-select: none;
   color: var(--main-blue);
-  background-color: var(--button-fill);
+  background-color: var(--third-blue);
   border: 2px solid var(--second-blue);
   border-radius: 8px;
   padding: 4px 8px;
@@ -108,13 +107,15 @@
 }
 
 .manage-users .edit-overlay {
-  transition: 0.2s;
-  height: 100%;
-  border-radius: 8px;
-  width: 100%;
+  /* transition: 0.2s; */
+  height: 100vh;
+  /* border-radius: 8px; */
+  width: 100vw;
   background-color: #000;
   /* opacity: 0; */
-  z-index: -1;
+  /* z-index: -1; */
+  top: 0;
+  left: 0;
   position: absolute;
   content: "";
 }
@@ -161,7 +162,7 @@
   border: 2px solid var(--second-blue);
   color: var(--main-blue);
   font-weight: 500;
-  background: var(--button-fill);
+  background: var(--third-blue);
   border-radius: 8px;
 }
 .manage-users .edit .child input:focus {
@@ -178,7 +179,7 @@
 }
 
 .manage-users .edit .child .admin .in {
-  background-color: var(--button-fill);
+  background-color: var(--third-blue);
   padding: 4px 8px;
   border: 2px solid var(--second-blue);
   border-radius: 8px;

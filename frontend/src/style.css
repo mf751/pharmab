@@ -3,10 +3,14 @@
   --main-color: rgb(0, 0, 0);
   --main-blue: #5065f6;
   --second-blue: #a7b1f9;
+  --third-blue: #edeffe;
   --main-red: #f04b69;
+  --third-red: #fcdce1;
   --main-green: #28b95e;
+  --third-green: #d4f1df;
   --main-grey: #757b82;
-  --button-fill: #edeffe;
+  --main-yellow: #ffdb45;
+  --third-yellow: #fff8da;
 }
 
 body {
@@ -41,5 +45,5 @@ body {
 }
 
 .bxs {
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

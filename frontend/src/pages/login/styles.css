@@ -15,6 +15,10 @@
   position: relative;
 }
 
+.login.signup {
+  height: 732px;
+}
+
 .login .back-container {
   position: absolute;
   left: 25px;
@@ -37,7 +41,7 @@
 .login .icon {
   height: 56px;
   width: 56px;
-  background-color: #ffdb45;
+  background-color: var(--main-yellow);
   display: flex;
   justify-content: center;
   align-items: center;
