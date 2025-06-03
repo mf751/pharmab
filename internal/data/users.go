@@ -127,3 +127,43 @@ SELECT id, name, email, is_admin, created_at, phone_number FROM users
 
 	return &users, nil
 }
+
+func (m UserModel) UpdateUser(user *User) error {
+	sqlQuery := `
+UPDATE users
+SET name = ?, email = ?, is_admin = ?, phone_number = ?
+WHERE id = ?
+	`
+	sqlQueryWithPassword := `
+UPDATE users
+SET name = ?, email = ?, is_admin = ?, phone_number = ?, password_hash = ?
+WHERE id = ?
+	`
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+
+	var err error
+	if user.HashedPassword == "" {
+		_, err = m.DB.QueryContext(
+			ctx,
+			sqlQuery,
+			user.Name,
+			user.Email,
+			user.IsAdmin,
+			user.PhoneNumber,
+			user.ID,
+		)
+	} else {
+		_, err = m.DB.QueryContext(
+			ctx,
+			sqlQueryWithPassword,
+			user.Name,
+			user.Email,
+			user.IsAdmin,
+			user.PhoneNumber,
+			user.HashedPassword,
+			user.ID,
+		)
+	}
+	return err
+}

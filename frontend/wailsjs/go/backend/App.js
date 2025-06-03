@@ -13,3 +13,7 @@ export function GetUsers() {
 export function Login(arg1, arg2) {
   return window['go']['backend']['App']['Login'](arg1, arg2);
 }
+
+export function UpdateUser(arg1, arg2, arg3, arg4, arg5, arg6) {
+  return window['go']['backend']['App']['UpdateUser'](arg1, arg2, arg3, arg4, arg5, arg6);
+}

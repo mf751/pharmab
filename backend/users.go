@@ -53,3 +53,24 @@ func (app *App) GetUsers() GetUsersResponse {
 	}
 	return GetUsersResponse{Users: *users}
 }
+
+func (app *App) UpdateUser(id int, name, email, password, phoneNumber string, isAdmin bool) bool {
+	user := &data.User{
+		ID:          id,
+		Name:        name,
+		Email:       email,
+		IsAdmin:     isAdmin,
+		PhoneNumber: phoneNumber,
+	}
+	if password == "" {
+		user.HashedPassword = ""
+	} else {
+
+		hash, err := bcrypt.GenerateFromPassword([]byte(password), 12)
+		if err != nil {
+			return false
+		}
+		user.HashedPassword = string(hash)
+	}
+	return app.UserModel.UpdateUser(user) == nil
+}

@@ -72,7 +72,9 @@
   font-weight: 500;
 }
 
-.manage-users table button {
+.manage-users table td > button {
+  user-select: none;
+  -webkit-user-select: none;
   color: var(--main-blue);
   background-color: var(--button-fill);
   border: 2px solid var(--second-blue);
@@ -82,11 +84,10 @@
   cursor: pointer;
 }
 
-.manage-users table .admin {
+.manage-users table td .admin {
   padding: 4px 8px;
   border-radius: 8px;
-  background-color: var(--main-red);
-  color: white;
+  color: black;
   font-weight: 500;
 }
 
@@ -95,12 +96,15 @@
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: 650px;
-  height: 650px;
+  width: 400px;
+  height: 380px;
   background-color: white;
   z-index: 8;
   border-radius: 10px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .manage-users .edit-overlay {
@@ -116,6 +120,67 @@
 }
 
 .manage-users .edit .close-icon {
+  align-self: flex-start;
   width: 35px;
   height: 35px;
+}
+
+.manage-users .edit button {
+  border-radius: 8px;
+  background-color: var(--main-blue);
+  height: 40px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 4px 8px;
+  box-shadow: inset 1 -2px 0px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 25px;
+}
+
+.manage-users .edit form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.manage-users .edit .child {
+  display: flex;
+}
+
+.manage-users .edit .child label {
+  width: 120px;
+  font-weight: 500;
+  color: var(--main-grey);
+  display: flex;
+  align-items: center;
+}
+
+.manage-users .edit .child input {
+  padding: 4px 8px;
+  border: 2px solid var(--second-blue);
+  color: var(--main-blue);
+  font-weight: 500;
+  background: var(--button-fill);
+  border-radius: 8px;
+}
+.manage-users .edit .child input:focus {
+  outline: none;
+}
+
+.manage-users .edit .child .admin {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  width: calc(100% - 120px);
+  display: flex;
+  justify-content: center;
+}
+
+.manage-users .edit .child .admin .in {
+  background-color: var(--button-fill);
+  padding: 4px 8px;
+  border: 2px solid var(--second-blue);
+  border-radius: 8px;
+  color: var(--main-blue);
 }

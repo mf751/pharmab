@@ -7,3 +7,5 @@ export function CreateUser(arg1:string,arg2:string,arg3:string,arg4:string,arg5:
 export function GetUsers():Promise<backend.GetUsersResponse>;
 
 export function Login(arg1:string,arg2:string):Promise<backend.LoginResponse>;
+
+export function UpdateUser(arg1:number,arg2:string,arg3:string,arg4:string,arg5:string,arg6:boolean):Promise<boolean>;
