@@ -7,52 +7,59 @@ import { FiBox } from "react-icons/fi";
 export default function Dashboard() {
   const dummyData = [
     {
+      transactionID: "7BA6C",
       producId: 551,
       customerName: "Kasey james",
       date: "21Feb 2025",
-      amount: 14.0,
+      amount: "$14.0",
       user: "Fred",
     },
     {
+      transactionID: "5M97E",
       producId: 309,
       customerName: "David williams",
       date: "21Feb 2025",
-      amount: 21.5,
+      amount: "$21.5",
       user: "Fred",
     },
     {
+      transactionID: "85GN3",
       producId: 471,
       customerName: "Robert Howel",
       date: "21Feb 2025",
-      amount: 33.2,
+      amount: "$33.2",
       user: "Fred",
     },
     {
+      transactionID: "K829N",
       producId: 813,
       customerName: "Amy williams",
       date: "21Feb 2025",
-      amount: 4.0,
+      amount: "$4.0",
       user: "Fred",
     },
     {
+      transactionID: "LZ9RQ",
       producId: 912,
       customerName: "Sarah Morian",
       date: "21Feb 2025",
-      amount: 42.4,
+      amount: "$42.4",
       user: "Fred",
     },
     {
+      transactionID: "VB8B9",
       producId: 54,
       customerName: "Keith Alan",
       date: "21Feb 2025",
-      amount: 28.8,
+      amount: "$28.8",
       user: "Fred",
     },
     {
+      transactionID: "91VAC",
       producId: 499,
       customerName: "Morgan Jordy",
       date: "21Feb 2025",
-      amount: 15.3,
+      amount: "$15.3",
       user: "Fred",
     },
   ];
@@ -109,10 +116,91 @@ export default function Dashboard() {
           <div className="details">Show Details</div>
         </div>
       </div>
-      <div className="head-history">
-        {dummyData.map((item) => (
-          <div className="item"></div>
-        ))}
+      <div className="head-history bxs">
+        <table>
+          <thead>
+            <th>Transaction ID</th>
+            <th>Product ID</th>
+            <th>Customer Name</th>
+            <th>Date</th>
+            <th>Total Amount</th>
+            <th>Sold by</th>
+          </thead>
+          {dummyData.map((item) => (
+            <tbody>
+              <td>{item.transactionID}</td>
+              <td>{item.producId}</td>
+              <td>{item.customerName}</td>
+              <td>{item.date}</td>
+              <td>{item.amount}</td>
+              <td>{item.user}</td>
+            </tbody>
+          ))}
+        </table>
+      </div>
+      <div className="monthly-progress bxs">
+        <h2>Monthly Progress</h2>
+        <div className="chart">
+          <div className="scale">
+            <div className="unit">120</div>
+            <div className="unit">90</div>
+            <div className="unit">60</div>
+            <div className="unit">30</div>
+            <div className="unit">0</div>
+          </div>
+          <div className="values">
+            <div className="month">
+              <span className="value" style={{ "--progress": "80%" }}></span>
+              <span className="name">Jan</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "55%" }}></span>
+              <span className="name" data-progress="62%">
+                Feb
+              </span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "44%" }}></span>
+              <span className="name">Mar</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "65%" }}></span>
+              <span className="name">Apr</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "73%" }}></span>
+              <span className="name">May</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "75%" }}></span>
+              <span className="name">Jun</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "53%" }}></span>
+              <span className="name">Jul</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "63%" }}></span>
+              <span className="name">Aug</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "45%" }}></span>
+              <span className="name">Sep</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "69%" }}></span>
+              <span className="name">Oct</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "78%" }}></span>
+              <span className="name">Nov</span>
+            </div>
+            <div className="month">
+              <span className="value" style={{ "--progress": "82%" }}></span>
+              <span className="name">Dec</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

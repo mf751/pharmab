@@ -2,6 +2,7 @@
   width: 100%;
   padding: 40px;
   display: flex;
+  flex-direction: column;
 }
 
 .dashboard .head-stats {
@@ -80,4 +81,120 @@
 .dashboard .head-stats .child .content .text .number {
   font-size: 2rem;
   font-weight: 200;
+}
+
+.dashboard .head-history {
+  margin-top: 40px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.dashboard .head-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard .head-history table th,
+.dashboard .head-history table td {
+  border-bottom: 1px solid var(--main-bg);
+  padding: 10px 20px;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 18px;
+}
+
+.dashboard .head-history table th {
+  color: var(--main-grey);
+}
+.dashboard .head-history table td {
+  color: black;
+  font-weight: 500;
+}
+.dashboard .head-history table tbody:last-child td {
+  border: none;
+}
+
+.dashboard .monthly-progress {
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 20px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard .monthly-progress h2 {
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.dashboard .monthly-progress .chart {
+  display: flex;
+  height: 100%;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.dashboard .monthly-progress .chart .scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.dashboard .monthly-progress .scale .unit {
+  color: var(--main-grey);
+  font-weight: 200;
+}
+
+.dashboard .monthly-progress .values {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  border-left: 2px solid var(--main-bg);
+  align-items: flex-start;
+  border-bottom: 2px solid var(--main-bg);
+  padding: 0 10px;
+}
+
+.dashboard .monthly-progress .values .month {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px 0;
+}
+
+.dashboard .monthly-progress .values .name {
+  display: flex;
+  justify-content: center;
+  order: -1;
+  font-weight: 500;
+  color: var(--main-grey);
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.dashboard .monthly-progress .values .value {
+  position: relative;
+  width: 60px;
+  height: 100%;
+  display: inline-block;
+  background-color: var(--main-bg);
+  border-radius: 4px;
+}
+
+.dashboard .monthly-progress .values .value::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  z-index: 8;
+  width: 100%;
+  height: var(--progress);
+  background-color: var(--main-green);
+  border-radius: 4px;
 }
