@@ -63,6 +63,50 @@ export default function Dashboard() {
       user: "Fred",
     },
   ];
+  const dummyData2 = [
+    {
+      id: 1012,
+      name: "Paracetamol",
+      manufacture: "GSK",
+      price: "2.50",
+      sales: 220,
+    },
+    {
+      id: 8493,
+      name: "Amoxicillin",
+      manufacture: "Pfizer",
+      price: "5.00",
+      sales: 104,
+    },
+    {
+      id: 6542,
+      name: "Cetirizine",
+      manufacture: "Sun Pharma",
+      price: "1.80",
+      sales: 93,
+    },
+    {
+      id: 7820,
+      name: "Ibuprofen",
+      manufacture: "Bayer",
+      price: "3.25",
+      sales: 86,
+    },
+    {
+      id: 2156,
+      name: "Dextromethorphan",
+      manufacture: "Novartis",
+      price: "4.10",
+      sales: 68,
+    },
+    {
+      id: 1093,
+      name: "Eye Lubricant",
+      manufacture: "Refresh",
+      price: "7.00",
+      sales: 52,
+    },
+  ];
 
   return (
     <div className="dashboard">
@@ -138,68 +182,91 @@ export default function Dashboard() {
           ))}
         </table>
       </div>
-      <div className="monthly-progress bxs">
-        <h2>Monthly Progress</h2>
-        <div className="chart">
-          <div className="scale">
-            <div className="unit">120</div>
-            <div className="unit">90</div>
-            <div className="unit">60</div>
-            <div className="unit">30</div>
-            <div className="unit">0</div>
+      <div className="bottom-row">
+        <div className="monthly-progress bxs">
+          <h2>Monthly Progress</h2>
+          <div className="chart">
+            <div className="scale">
+              <div className="unit">120</div>
+              <div className="unit">90</div>
+              <div className="unit">60</div>
+              <div className="unit">30</div>
+              <div className="unit">0</div>
+            </div>
+            <div className="values">
+              <div className="month">
+                <span className="value" style={{ "--progress": "80%" }}></span>
+                <span className="name">Jan</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "55%" }}></span>
+                <span className="name" data-progress="62%">
+                  Feb
+                </span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "44%" }}></span>
+                <span className="name">Mar</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "65%" }}></span>
+                <span className="name">Apr</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "73%" }}></span>
+                <span className="name">May</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "75%" }}></span>
+                <span className="name">Jun</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "53%" }}></span>
+                <span className="name">Jul</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "63%" }}></span>
+                <span className="name">Aug</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "45%" }}></span>
+                <span className="name">Sep</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "69%" }}></span>
+                <span className="name">Oct</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "78%" }}></span>
+                <span className="name">Nov</span>
+              </div>
+              <div className="month">
+                <span className="value" style={{ "--progress": "82%" }}></span>
+                <span className="name">Dec</span>
+              </div>
+            </div>
           </div>
-          <div className="values">
-            <div className="month">
-              <span className="value" style={{ "--progress": "80%" }}></span>
-              <span className="name">Jan</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "55%" }}></span>
-              <span className="name" data-progress="62%">
-                Feb
-              </span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "44%" }}></span>
-              <span className="name">Mar</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "65%" }}></span>
-              <span className="name">Apr</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "73%" }}></span>
-              <span className="name">May</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "75%" }}></span>
-              <span className="name">Jun</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "53%" }}></span>
-              <span className="name">Jul</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "63%" }}></span>
-              <span className="name">Aug</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "45%" }}></span>
-              <span className="name">Sep</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "69%" }}></span>
-              <span className="name">Oct</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "78%" }}></span>
-              <span className="name">Nov</span>
-            </div>
-            <div className="month">
-              <span className="value" style={{ "--progress": "82%" }}></span>
-              <span className="name">Dec</span>
-            </div>
-          </div>
+        </div>
+        <div className="orders bxs">
+          <h2>Most Sold</h2>
+          <table>
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Manufacture</th>
+              <th>Sales</th>
+              <th>Price</th>
+            </thead>
+            {dummyData2.map((item) => (
+              <tbody>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.manufacture}</td>
+                <td>{item.sales}</td>
+                <td>${item.price}</td>
+              </tbody>
+            ))}
+          </table>
         </div>
       </div>
     </div>
