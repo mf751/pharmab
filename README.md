@@ -22,7 +22,9 @@ Pharmacy Management Desktop Application
 ## Application Structure
 
 **The application** Built With go-wails a go/reactjs multi-platform framework
+
 **Database** is embedded Sqlite and handled with migrations and go drivers
+
 **Frontend** is reactjs wiht react-router and react-redux along side react icons
 
 ## Demo
