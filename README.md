@@ -1,4 +1,4 @@
-# Pharmacy B
+# Pharma B
 
 Pharmacy Management Desktop Application
 
