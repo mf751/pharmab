@@ -27,4 +27,4 @@ Pharmacy Management Desktop Application
 
 ## Demo
 
-[![PharmaB Demo](https://img.youtube.com/WE16-nGkzA0/0.jpg)](https://youtu.be/WE16-nGkzA0)
+[![PharmaB Demo](https://img.youtube.com/vi/WE16-nGkzA0/default.jpg)](https://youtu.be/WE16-nGkzA0)
