@@ -6,18 +6,18 @@ Pharmacy Management Desktop Application
 
 ## Features
 
-- **Authentication **
-- **Login **
-- **Dashboard **
-- **Porducts / Add / Delete / Edit **
-- **Purchase Products **
-- **Statistics **
-- **Orders / Add / Delete / Edit **
-- **Expires of Products **
-- **History of Transactions **
-- **Admin Users **
-  - **Manage Users / Add / Delete / Edit **
-  - **All Statistics **
+- **Authentication**
+- **Login**
+- **Dashboard**
+- **Porducts / Add / Delete / Edit**
+- **Purchase Products**
+- **Statistics**
+- **Orders / Add / Delete / Edit**
+- **Expires of Products**
+- **History of Transactions**
+- **Admin Users**
+  - **Manage Users / Add / Delete / Edit**
+  - **All Statistics**
 
 ## Application Structure
 
